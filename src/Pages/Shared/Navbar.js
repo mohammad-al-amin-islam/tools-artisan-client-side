@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const navItem = <>
-        <li><Link className='font-bold' to='/'>Home</Link></li>
-        <li><Link className='font-bold' to='/'>Tools</Link></li>
+        <li><Link className='mr-2 text-xl' to='/'>Home</Link></li>
+        <li><Link className='mr-2 text-xl' to='/'>Tools</Link></li>
     </>
     return (
-        <div className="navbar bg-base-200">
+        <div className="navbar bg-base-200 py-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -17,16 +17,16 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl" to='/'>Tools Artisan</Link>
+                <Link className="btn btn-ghost  text-3xl uppercase font-bold" to='/'>Tools Artisan</Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {navItem}
                 </ul>
             </div>
-            <div className="navbar-end">
+            {/* <div className="navbar-end">
                 <Link className="btn" to='/'>Get started</Link>
-            </div>
+            </div> */}
         </div>
     );
 };
