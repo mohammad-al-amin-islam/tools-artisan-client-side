@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const navItem = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>Tools</Link></li>
+        <li><Link className='font-bold' to='/'>Home</Link></li>
+        <li><Link className='font-bold' to='/'>Tools</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
