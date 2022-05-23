@@ -6,9 +6,13 @@ import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const logout = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    }
     const navItem = <>
         <li><Link className='mr-2 text-xl' to='/'>Home</Link></li>
-        <li>{user ? <button onClick={() => signOut(auth)} class="btn btn-ghost text-xl font-normal">Sign Out</button>
+        <li>{user ? <button onClick={logout} class="btn btn-ghost text-xl font-normal">Sign Out</button>
             :
             <Link className='mr-2 text-xl' to='/login'>Login</Link>}</li>
     </>

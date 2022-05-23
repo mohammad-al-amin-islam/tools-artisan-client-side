@@ -4,6 +4,7 @@ import BannerImg from '../../images/banner-img.jpg'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [
@@ -14,6 +15,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [token] = useToken(user || googleUser);
 
     const navigate = useNavigate();
 
@@ -34,7 +36,7 @@ const Login = () => {
         getError = <p>{error?.message || googleError?.message}</p>
     }
 
-    if (user || googleUser) {
+    if (token) {
         navigate('/');
     }
 
