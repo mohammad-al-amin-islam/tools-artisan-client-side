@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
     const [
@@ -28,7 +29,7 @@ const Login = () => {
 
 
     if (loading || googleLoading) {
-        return <p>Loading..</p>
+        return <Loading></Loading>
     }
 
     let getError;
