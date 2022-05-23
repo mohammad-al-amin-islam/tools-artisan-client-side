@@ -3,7 +3,7 @@ import auth from '../../firebase.init';
 import BannerImg from '../../images/banner-img.jpg'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
@@ -19,6 +19,8 @@ const Login = () => {
     const [token] = useToken(user || googleUser);
 
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
         console.log(data);
@@ -38,7 +40,7 @@ const Login = () => {
     }
 
     if (token) {
-        navigate('/');
+        navigate(from, { replace: true });
     }
 
 
