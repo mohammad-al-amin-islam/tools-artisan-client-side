@@ -34,7 +34,7 @@ const SignUp = () => {
     }
     let getError;
     if (error || googleError || updateError) {
-        getError = <p>{error.message || googleError.message || updateError.message}</p>
+        getError = <p>{error?.message || googleError?.message || updateError.message}</p>
     }
 
     return (

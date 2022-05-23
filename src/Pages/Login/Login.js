@@ -28,13 +28,16 @@ const Login = () => {
     if (loading || googleLoading) {
         return <p>Loading..</p>
     }
+
+    let getError;
+    if (error || googleError) {
+        getError = <p>{error?.message || googleError?.message}</p>
+    }
+
     if (user || googleUser) {
         navigate('/');
     }
-    let getError;
-    if (error || googleError) {
-        getError = <p>{error.message || googleError.message}</p>
-    }
+
 
 
     return (
