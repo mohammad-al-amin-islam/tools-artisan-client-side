@@ -38,7 +38,8 @@ const Purchase = () => {
             toolsName: name,
             address: address,
             number: number,
-            quantity: quantity
+            quantity: quantity,
+            price: price
         }
         fetch('http://localhost:5000/orders', {
             method: 'POST',
