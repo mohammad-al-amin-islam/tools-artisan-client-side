@@ -8,7 +8,7 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
 
-    const [orders, setOrders] = useState('');
+    const [orders, setOrders] = useState([]);
 
 
     const navigate = useNavigate();
