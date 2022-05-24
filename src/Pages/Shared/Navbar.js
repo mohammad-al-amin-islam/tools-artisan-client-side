@@ -11,10 +11,10 @@ const Navbar = () => {
         localStorage.removeItem('accessToken');
     }
     const navItem = <>
-        <li><Link className='mr-2 text-xl' to='/'>Home</Link></li>
-        <li>{user ? <button onClick={logout} class="btn btn-ghost text-xl font-normal">Sign Out</button>
+        <li><Link className='mr-2 text-lg' to='/'>Home</Link></li>
+        <li>{user ? <button onClick={logout} class="btn btn-ghost text-lg font-normal normal-case">Sign Out</button>
             :
-            <Link className='mr-2 text-xl' to='/login'>Login</Link>}</li>
+            <Link className='mr-2 text-lg' to='/login'>Login</Link>}</li>
     </>
     return (
         <div className="navbar bg-base-200 py-3">

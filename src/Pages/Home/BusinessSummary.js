@@ -11,7 +11,7 @@ const BusinessSummary = () => {
             <div style={{ backgroundImage: `url(${business})`, backgroundSize: 'cover', backgroundPosition: 'center' }} className='px-10 py-10 grid grid-cols-1 lg:grid-cols-3'>
                 <div className='text-center'>
                     <FlagIcon className="h-32 w-32 text-blue-500 mx-auto" />
-                    <h1 className="text-6xl">72</h1>
+                    <h1 className="text-6xl">72+</h1>
                     <p className='text-2xl'>Countries</p>
                 </div>
                 <div className='text-center'>
