@@ -26,7 +26,7 @@ const AllTools = () => {
     }, [])
     return (
         <div className='bg-slate-50'>
-            <div className='m-10 '>
+            <div className='p-10 '>
                 <div className='pt-10'>
                     <h1 className="text-4xl text-center font-bold text-primary ">Available Tools:{tools.length}</h1>
                     <div className='border w-56 h-1 mx-auto mt-4 bg-amber-700'></div>
