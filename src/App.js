@@ -14,6 +14,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Pages/Shared/NotFound';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
+      <Footer></Footer>
     </div>
   );
 }

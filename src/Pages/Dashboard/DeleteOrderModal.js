@@ -18,7 +18,7 @@ const DeleteOrderModal = ({ deleteItem, setDeleteItem, setReload }) => {
                     toast.success(`${toolsName} delteted successfully`);
 
                     setDeleteItem(null);
-                    setReload(false)
+                    setReload(false);
                 }
 
             })
