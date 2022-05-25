@@ -16,6 +16,7 @@ import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Pages/Shared/NotFound';
 import Footer from './Pages/Shared/Footer';
 import Blogs from './Pages/Blogs/Blogs';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='my-profile' element={<MyProfile />} />
         </Route>
         <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/my-portfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='*' element={<NotFound />}></Route>
