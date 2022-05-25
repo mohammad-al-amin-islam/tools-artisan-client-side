@@ -1,9 +1,9 @@
 import React from 'react';
 import business from '../../images/business.png'
-import { BeakerIcon, CogIcon, FlagIcon, UserGroupIcon } from '@heroicons/react/solid'
+import { CogIcon, FlagIcon, UserGroupIcon } from '@heroicons/react/solid'
 const BusinessSummary = () => {
     return (
-        <div className='mb-10 bg-slate-100'>
+        <div className='bg-slate-100'>
             <div className='pt-10'>
                 <h1 className="text-4xl text-center font-bold text-primary ">Millons Business Trust Us</h1>
                 <div className='border w-60 h-1 mx-auto mt-4 bg-amber-700'></div>

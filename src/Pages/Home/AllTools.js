@@ -25,7 +25,7 @@ const AllTools = () => {
             .then(data => setTools(data))
     }, [])
     return (
-        <div className='bg-slate-50'>
+        <div className='bg-slate-100'>
             <div className='p-10 '>
                 <div className='pt-10'>
                     <h1 className="text-4xl text-center font-bold text-primary ">Available Tools:{tools.length}</h1>
