@@ -74,4 +74,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders; <h1>MyOrders</h1>
+export default MyOrders;

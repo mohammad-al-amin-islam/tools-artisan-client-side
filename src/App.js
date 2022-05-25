@@ -13,6 +13,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
     </div>
