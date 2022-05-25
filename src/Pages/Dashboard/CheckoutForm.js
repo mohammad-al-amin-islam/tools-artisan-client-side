@@ -19,6 +19,7 @@ const CheckoutForm = ({ order }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify({ price })
+
         })
             .then(res => res.json())
             .then(data => {
