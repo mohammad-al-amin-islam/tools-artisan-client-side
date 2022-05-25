@@ -15,6 +15,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Pages/Shared/NotFound';
 import Footer from './Pages/Shared/Footer';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='add-review' element={<AddReview />} />
           <Route path='my-profile' element={<MyProfile />} />
         </Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='*' element={<NotFound />}></Route>

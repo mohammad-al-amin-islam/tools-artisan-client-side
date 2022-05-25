@@ -12,6 +12,7 @@ const Navbar = () => {
     }
     const navItem = <>
         <li><Link className='mr-2 text-lg' to='/'>Home</Link></li>
+        <li><Link className='mr-2 text-lg' to='/blogs'>Blogs</Link></li>
         {
             user && <li><Link className='mr-2 text-lg' to='/dashboard'>Dashboard</Link></li>
         }
