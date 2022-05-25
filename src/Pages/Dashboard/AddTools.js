@@ -19,7 +19,7 @@ const AddTools = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success("Review updated successfully");
+                toast.success("Tools added successfully");
                 reset();
             })
     }
