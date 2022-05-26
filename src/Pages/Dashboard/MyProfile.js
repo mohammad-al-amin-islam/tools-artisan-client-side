@@ -24,7 +24,7 @@ const MyProfile = () => {
         console.log(profileInfo)
         const email = user?.email;
         if (email) {
-            fetch(`http://localhost:5000/userprofile/${email}`, {
+            fetch(`https://dry-headland-80440.herokuapp.com/userprofile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
@@ -41,37 +41,37 @@ const MyProfile = () => {
     }
     return (
         <div className='flex h-auto justify-center my-2'>
-            <div class="card w-96 lg:w-1/2 bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card w-96 lg:w-1/2 bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h1 className="text-3xl text-center text-purple-600">My Profile form</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
                             <input value={user?.displayName} disabled{...register("name")}
                                 type="text"
                                 placeholder="Your Name"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input value={user?.email} disabled {...register("email")}
                                 type="text"
                                 placeholder="Your Email"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Education</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Education</span>
                             </label>
                             <input {...register("education", {
                                 required: {
@@ -81,15 +81,15 @@ const MyProfile = () => {
                             })}
                                 type="text"
                                 placeholder="Your Education"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.education?.type === 'required' && <p>{errors.education.message}</p>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">City</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">City</span>
                             </label>
                             <input {...register("city", {
                                 required: {
@@ -99,15 +99,15 @@ const MyProfile = () => {
                             })}
                                 type="text"
                                 placeholder="Your City"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.city?.type === 'required' && <p>{errors.city.message}</p>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Phone Number</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Phone Number</span>
                             </label>
                             <input {...register("number", {
                                 required: {
@@ -117,15 +117,15 @@ const MyProfile = () => {
                             })}
                                 type="text"
                                 placeholder="Your number"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.number?.type === 'required' && <p>{errors.number.message}</p>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Linked in profile link</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Linked in profile link</span>
                             </label>
                             <input {...register("profile", {
                                 required: {
@@ -135,9 +135,9 @@ const MyProfile = () => {
                             })}
                                 type="text"
                                 placeholder="Linked in profile link"
-                                class="input input-bordered w-full"
+                                className="input input-bordered w-full"
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.profile?.type === 'required' && <p>{errors.profile.message}</p>}
                             </label>
                         </div>

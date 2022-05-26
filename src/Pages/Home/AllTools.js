@@ -8,7 +8,7 @@ const AllTools = () => {
     const [tools, setTools] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
-        fetch('http://localhost:5000/tools', {
+        fetch('https://dry-headland-80440.herokuapp.com/tools', {
             method: 'GET',
             // headers: {
             //     authorization: `Bearer ${localStorage.getItem('accessToken')}`

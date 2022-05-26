@@ -21,7 +21,7 @@ const AddReview = () => {
                 description: data.description
             }
 
-            fetch('http://localhost:5000/ratings', {
+            fetch('https://dry-headland-80440.herokuapp.com/ratings', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

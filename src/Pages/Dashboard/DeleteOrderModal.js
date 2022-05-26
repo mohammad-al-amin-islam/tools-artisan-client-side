@@ -6,7 +6,7 @@ const DeleteOrderModal = ({ deleteItem, setDeleteItem, setReload }) => {
 
     const { _id, toolsName } = deleteItem;
     const handleDeleteBtn = () => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://dry-headland-80440.herokuapp.com/orders/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

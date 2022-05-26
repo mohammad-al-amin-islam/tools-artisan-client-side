@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [
@@ -15,7 +17,10 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+        auth
+    );
+    const { register, formState: { errors }, handleSubmit, getValues } = useForm();
     const [token] = useToken(user || googleUser);
 
     const navigate = useNavigate();
@@ -23,42 +28,50 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
-        console.log(data);
         const email = data.email;
         const password = data.password;
         signInWithEmailAndPassword(email, password);
     }
 
 
-    if (loading || googleLoading) {
+    if (loading || googleLoading || sending) {
         return <Loading></Loading>
     }
 
     let getError;
-    if (error || googleError) {
-        getError = <p>{error?.message || googleError?.message}</p>
+    if (error || googleError || resetError) {
+        getError = <p>{error?.message || googleError?.message || resetError?.message}</p>
     }
 
     if (token) {
         navigate(from, { replace: true });
     }
 
-
+    const handleResetBtn = async () => {
+        const email = getValues("email")
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Reset email sent');
+        }
+        else {
+            toast.error('Give Email First');
+        }
+    }
 
     return (
-        <div class="hero min-h-screen bg-base-100">
-            <div class="hero-content flex-col lg:flex-row">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-3xl font-bold text-center">Welcome to TOOL ARTISAN</h1>
+        <div className="hero min-h-screen bg-base-100">
+            <div className="hero-content flex-col lg:flex-row">
+                <div className="text-center lg:text-left">
+                    <h1 className="text-3xl font-bold text-center">Welcome to TOOL ARTISAN</h1>
                     <img className='w-full' src={BannerImg} alt="" />
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <h1 className="text-3xl text-center text-purple-600">Login Here</h1>
                         <form className='m-3' onSubmit={handleSubmit(onSubmit)}>
-                            <div class="form-control w-full ">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
                                 <input {...register("email", {
                                     required: {
@@ -72,16 +85,16 @@ const Login = () => {
                                 })}
                                     type="text"
                                     placeholder="Your Email"
-                                    class="input input-bordered w-full"
+                                    className="input input-bordered w-full"
                                 />
-                                <label class="label">
+                                <label className="label">
                                     {errors.email?.type === 'required' && <p>{errors.email.message}</p>}
                                     {errors.email?.type === 'pattern' && <p>{errors.email.message}</p>}
                                 </label>
                             </div>
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
                                 <input {...register("password", {
                                     required: {
@@ -95,19 +108,20 @@ const Login = () => {
                                 })}
                                     type="password"
                                     placeholder="Your password"
-                                    class="input input-bordered w-full"
+                                    className="input input-bordered w-full"
                                 />
-                                <label class="label">
+                                <label className="label">
                                     {errors.password?.type === 'required' && <p>{errors.password.message}</p>}
                                     {errors.password?.type === 'minLength' && <p>{errors.password.message}</p>}
                                 </label>
                             </div>
                             {getError}
+                            <p>Forget Password?<button onClick={handleResetBtn} className='btn btn-link'>Reset here</button></p>
                             <input className='btn btn-primary w-full' type="submit" value='Sign In' />
                         </form>
                     </div>
-                    <p className='text-center'>New to Tools Artsian?<Link to='/signup'>Sign Up</Link></p>
-                    <div class="divider p-5">OR</div>
+                    <p className='text-center'>New to Tools Artsian?<Link className='text-blue-500' to='/signup'>Sign Up</Link></p>
+                    <div className="divider p-5">OR</div>
                     <div className='mx-auto mb-5'>
                         <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline'>Sign in with google</button>
                     </div>

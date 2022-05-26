@@ -5,7 +5,7 @@ import AllOrderRow from './AllOrderRow';
 import DeleteUnpaidOrderModal from './DeleteUnpaidOrderModal';
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/allorders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://dry-headland-80440.herokuapp.com/allorders', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -18,8 +18,8 @@ const ManageAllOrders = () => {
     return (
         <div>
             <h1 className='text-2xl'>Manage all order here:{orders.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

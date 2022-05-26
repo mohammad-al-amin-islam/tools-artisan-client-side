@@ -9,7 +9,7 @@ const AddTools = () => {
 
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/tools', {
+        fetch('https://dry-headland-80440.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

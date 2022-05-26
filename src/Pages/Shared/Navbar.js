@@ -19,7 +19,7 @@ const Navbar = () => {
         }
         <li>{user ? <div>
             <p className='text-blue-800 font-bold'>{user.displayName}</p>
-            <button onClick={logout} class="btn btn-ghost text-lg font-normal normal-case">Sign Out</button>
+            <button onClick={logout} className="btn btn-ghost text-lg font-normal normal-case">Sign Out</button>
         </div>
             :
             <Link className='mr-2 text-lg' to='/login'>Login</Link>}</li>
@@ -43,7 +43,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end lg:hidden">
-                <label for="my-drawer-2" tabIndex="1" className="btn btn-primary drawer-button lg:hidden">
+                <label htmlFor="my-drawer-2" tabIndex="1" className="btn btn-primary drawer-button lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
             </div>

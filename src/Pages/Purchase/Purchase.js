@@ -18,7 +18,7 @@ const Purchase = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://dry-headland-80440.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTool(data));
     }, [id]);
@@ -41,7 +41,7 @@ const Purchase = () => {
             quantity: quantity,
             price: price
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://dry-headland-80440.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

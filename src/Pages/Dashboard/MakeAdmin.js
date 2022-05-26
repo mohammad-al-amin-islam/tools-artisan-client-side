@@ -4,7 +4,7 @@ import Loading from '../../Pages/Shared/Loading'
 import { toast } from 'react-toastify';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('user', () => fetch('https://dry-headland-80440.herokuapp.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,7 +15,7 @@ const MakeAdmin = () => {
 
     //handle admin 
     const handleAdmin = email => [
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://dry-headland-80440.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

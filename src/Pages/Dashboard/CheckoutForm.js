@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, customerName, email } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://dry-headland-80440.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -75,7 +75,7 @@ const CheckoutForm = ({ order }) => {
                 orderId: _id,
                 transaction: paymentIntent.id
             }
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://dry-headland-80440.herokuapp.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

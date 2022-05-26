@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteUnpaidOrderModal = ({ unpaidItem, setUnpaidItem, refetch }) => {
     const { _id, toolsName } = unpaidItem;
     const handleDeleteBtn = id => {
-        fetch(`http://localhost:5000/order/unpaid/${id}`, {
+        fetch(`https://dry-headland-80440.herokuapp.com/order/unpaid/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -5,7 +5,7 @@ const AllOrderRow = ({ order, index, refetch, setUnpaidItem }) => {
     const { customerName, toolsName, paid } = order;
 
     const handlePending = id => {
-        fetch(`http://localhost:5000/orders/shipped/${id}`, {
+        fetch(`https://dry-headland-80440.herokuapp.com/orders/shipped/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const AllOrderRow = ({ order, index, refetch, setUnpaidItem }) => {
             <td>{toolsName}</td>
             <td>{paid !== true ? <p>Unpaid</p> : <p>Paid</p>}</td>
             <td>{(paid === true && order?.status !== true) && <button onClick={() => handlePending(order._id)} className='btn btn-xs'>Pending</button>}</td>
-            <td>{paid !== true ? <label onClick={() => setUnpaidItem(order)} for="my-modal-3" class="btn btn-xs modal-button">Cancel</label> : <span>Paid order cannot delete</span>}</td>
+            <td>{paid !== true ? <label onClick={() => setUnpaidItem(order)} for="my-modal-3" className="btn btn-xs modal-button">Cancel</label> : <span>Paid order cannot delete</span>}</td>
         </tr>
     );
 };
