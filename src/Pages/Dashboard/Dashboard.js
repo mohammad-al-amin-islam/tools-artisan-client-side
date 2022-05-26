@@ -18,9 +18,9 @@ const Dashboard = () => {
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    {!admin && <li><Link to='/dashboard'>My Orders</Link></li>}
+                    <li><Link to='/dashboard'>My Profile</Link></li>
                     {!admin && <li><Link to='/dashboard/add-review'>Add Review</Link></li>}
-                    <li><Link to='/dashboard/my-profile'>My Profile</Link></li>
+                    {!admin && <li><Link to='/dashboard/my-order'>My Orders</Link></li>}
                     {admin && <li><Link to='/dashboard/make-admin'>Make Admin</Link></li>}
                     {admin && <li><Link to='/dashboard/add-tools'>Add Tools</Link></li>}
                     {admin && <li><Link to='/dashboard/manage-product'>Manage Products</Link></li>}

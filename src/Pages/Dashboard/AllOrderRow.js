@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const AllOrderRow = ({ order, index, refetch }) => {
+const AllOrderRow = ({ order, index, refetch, setUnpaidItem }) => {
     const { customerName, toolsName, paid } = order;
 
     const handlePending = id => {
@@ -31,7 +31,7 @@ const AllOrderRow = ({ order, index, refetch }) => {
             <td>{toolsName}</td>
             <td>{paid !== true ? <p>Unpaid</p> : <p>Paid</p>}</td>
             <td>{(paid === true && order?.status !== true) && <button onClick={() => handlePending(order._id)} className='btn btn-xs'>Pending</button>}</td>
-            <td>{paid !== true ? <p>Unpaid</p> : <p>Paid</p>}</td>
+            <td>{paid !== true ? <label onClick={() => setUnpaidItem(order)} for="my-modal-3" class="btn btn-xs modal-button">Cancel</label> : <span>Paid order cannot delete</span>}</td>
         </tr>
     );
 };

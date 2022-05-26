@@ -31,10 +31,10 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrders />} />
+          <Route index element={<MyProfile />} />
           <Route path='payment/:id' element={<Payment />} />
           <Route path='add-review' element={<AddReview />} />
-          <Route path='my-profile' element={<MyProfile />} />
+          <Route path='my-order' element={<MyOrders />} />
           <Route path='make-admin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
           <Route path='add-tools' element={<RequireAdmin><AddTools /></RequireAdmin>} />
           <Route path='manage-product' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import AllOrderRow from './AllOrderRow';
+import DeleteUnpaidOrderModal from './DeleteUnpaidOrderModal';
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch('http://localhost:5000/allorders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/allorders', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
+    const [unpaidItem, setUnpaidItem] = useState(null)
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -35,11 +37,17 @@ const ManageAllOrders = () => {
                                 order={order}
                                 index={index}
                                 refetch={refetch}
+                                setUnpaidItem={setUnpaidItem}
                             ></AllOrderRow>)
                         }
                     </tbody>
                 </table>
             </div>
+            {unpaidItem && <DeleteUnpaidOrderModal
+                unpaidItem={unpaidItem}
+                setUnpaidItem={setUnpaidItem}
+                refetch={refetch}
+            ></DeleteUnpaidOrderModal>}
         </div>
     );
 };
