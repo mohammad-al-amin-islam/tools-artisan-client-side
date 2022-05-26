@@ -16,10 +16,10 @@ const UserReview = () => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-9 '>
                 {
-                    reviews.map(review => <div key={review._id} class="card w-80 lg:w-96 bg-base-100 shadow-xl">
+                    reviews.map(review => <div key={review._id} className="card w-80 lg:w-96 bg-base-100 shadow-xl">
 
-                        <div class="card-body items-center text-center">
-                            <h2 class="card-title">Users Name: {review.name}</h2>
+                        <div className="card-body items-center text-center">
+                            <h2 className="card-title">Users Name: {review.name}</h2>
                             <h3 className="font-bold">Given ratings: {review.ratings}</h3>
                             <p><span className='font-bold'>Comments: </span>{review.description}</p>
 

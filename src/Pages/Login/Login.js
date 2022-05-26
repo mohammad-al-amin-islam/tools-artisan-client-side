@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
 import BannerImg from '../../images/banner-img.jpg'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -27,6 +27,12 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, navigate, from]);
+
     const onSubmit = data => {
         const email = data.email;
         const password = data.password;
@@ -43,9 +49,7 @@ const Login = () => {
         getError = <p>{error?.message || googleError?.message || resetError?.message}</p>
     }
 
-    if (token) {
-        navigate(from, { replace: true });
-    }
+
 
     const handleResetBtn = async () => {
         const email = getValues("email")

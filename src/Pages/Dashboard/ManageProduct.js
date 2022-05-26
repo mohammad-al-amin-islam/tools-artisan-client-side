@@ -14,8 +14,8 @@ const ManageProduct = () => {
     return (
         <div>
             <h1 className='text-2xl'>Manage Total Products:{tools.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -31,7 +31,7 @@ const ManageProduct = () => {
                             <th>{index + 1}</th>
                             <td>{tool.name}</td>
                             <td>{tool.price}</td>
-                            <td><label onClick={() => setDeleteTools(tool)} for="my-modal-2" class="btn btn-xs modal-button">Delete</label></td>
+                            <td><label onClick={() => setDeleteTools(tool)} htmlFor="my-modal-2" className="btn btn-xs modal-button">Delete</label></td>
                         </tr>)}
                     </tbody>
                 </table>

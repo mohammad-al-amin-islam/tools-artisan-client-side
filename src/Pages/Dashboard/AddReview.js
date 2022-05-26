@@ -42,9 +42,9 @@ const AddReview = () => {
                 <h1 className="text-4xl text-left font-bold text-primary ">Add a review</h1>
                 <div className='border w-56 h-1 mt-4 bg-amber-700'></div>
             </div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Review Form</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Review Form</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full ">
                             <label className="label">

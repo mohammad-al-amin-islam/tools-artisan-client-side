@@ -14,7 +14,7 @@ const DeleteToolModal = ({ deleteTools, setDeleteTools, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    toast.success(`${name} delteted successfully`);
+                    toast.success(`${name} deleted successfully`);
                     setDeleteTools(null);
                     refetch();
                 }
@@ -24,14 +24,14 @@ const DeleteToolModal = ({ deleteTools, setDeleteTools, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Want to delete {name}?</h3>
-                    <p class="py-4">Once you delete.It will remove this item permanently</p>
-                    <div class="modal-action">
-                        <label onClick={() => handleDeleteBtn()} class="btn btn-xs">Delete</label>
-                        <label for="my-modal-2" class="btn btn-xs">cancel</label>
+            <input type="checkbox" id="my-modal-2" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Want to delete {name}?</h3>
+                    <p className="py-4">Once you delete.It will remove this item permanently</p>
+                    <div className="modal-action">
+                        <label onClick={() => handleDeleteBtn()} className="btn btn-xs">Delete</label>
+                        <label htmlFor="my-modal-2" className="btn btn-xs">cancel</label>
                     </div>
                 </div>
             </div>

@@ -40,8 +40,8 @@ const MakeAdmin = () => {
     return (
         <div>
             <h2 className='text-2xl'>Make Admin Here:{users.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

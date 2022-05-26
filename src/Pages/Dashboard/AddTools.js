@@ -31,9 +31,9 @@ const AddTools = () => {
                     <div className='border w-56 h-1 mt-4 bg-amber-700 mx-auto'></div>
                 </div>
                 <div className='flex h-full justify-center'>
-                    <div class="card w-96 lg:w-1/2 bg-base-100 shadow-xl ">
-                        <div class="card-body">
-                            <h2 class="card-title">Tools Information</h2>
+                    <div className="card w-96 lg:w-1/2 bg-base-100 shadow-xl ">
+                        <div className="card-body">
+                            <h2 className="card-title">Tools Information</h2>
                             <form onSubmit={handleSubmit(onSubmit)}>
 
                                 <div className="form-control w-full">

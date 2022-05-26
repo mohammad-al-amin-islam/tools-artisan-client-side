@@ -10,4 +10,6 @@
 * Admin can add new product and also remove it.
 * And if payment are completed from user admin can shipped those order.
 * Also can remove those order that are not payment yet.
+* Blogs routes has some question and answer.
+* My portfolio will about my self.
 

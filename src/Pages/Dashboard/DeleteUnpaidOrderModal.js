@@ -13,7 +13,7 @@ const DeleteUnpaidOrderModal = ({ unpaidItem, setUnpaidItem, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    toast.success(`${toolsName} delteted successfully`);
+                    toast.success(`${toolsName} deleted successfully`);
                     setUnpaidItem(null);
                     refetch();
                 }
@@ -22,14 +22,14 @@ const DeleteUnpaidOrderModal = ({ unpaidItem, setUnpaidItem, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Want to delete {toolsName}?</h3>
-                    <p class="py-4">This is an unpaid order. Confirm deletation?Also you can cancel deletation</p>
-                    <div class="modal-action">
-                        <label onClick={() => handleDeleteBtn(_id)} class="btn btn-xs">Delete</label>
-                        <label for="my-modal-3" class="btn btn-xs">cancel</label>
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Want to delete {toolsName}?</h3>
+                    <p className="py-4">This is an unpaid order. Confirm deletation?Also you can cancel deletation</p>
+                    <div className="modal-action">
+                        <label onClick={() => handleDeleteBtn(_id)} className="btn btn-xs">Delete</label>
+                        <label htmlFor="my-modal-3" className="btn btn-xs">cancel</label>
                     </div>
                 </div>
             </div>

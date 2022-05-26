@@ -15,7 +15,7 @@ const OrderRow = ({ index, order, setDeleteItem }) => {
                     <p>TransactionId:{order.transactionId}</p>
                 </div>}
             </td>
-            <td>{!order.paid ? <label onClick={() => setDeleteItem(order)} for="my-modal" class="btn btn-xs modal-button">Cancel</label> : <span>Can't Cancel after payment</span>}</td>
+            <td>{!order.paid ? <label onClick={() => setDeleteItem(order)} htmlFor="my-modal" className="btn btn-xs modal-button">Cancel</label> : <span>Can't Cancel after payment</span>}</td>
             <td>{order.status !== true ? <p className='text-blue-700 font-bold'>Pending</p> : <p className='text-green-700 font-bold'>Shipped</p>}</td>
         </tr >
     );
