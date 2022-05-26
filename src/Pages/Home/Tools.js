@@ -15,7 +15,7 @@ const Tools = ({ tool }) => {
                     <p>Description:{description}</p>
                     <p>Minimum order:{minOrder}</p>
                     <p>Available Quantity:{availableQuantity}</p>
-                    <p>Price: <span className='text-3xl text-success font-bold'>{price}</span></p>
+                    <p>Price: <span className='text-3xl text-success font-bold'>${price}</span></p>
                 </div>
                 <div className="card-actions mt-3 mx-auto">
                     <button onClick={() => navigate(`/purchase/${_id}`)} className="btn btn-outline btn-primary">Buy Now</button>

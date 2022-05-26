@@ -1,27 +1,14 @@
-import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
 import Tools from './Tools';
 
 const AllTools = () => {
     const [tools, setTools] = useState([]);
-    const navigate = useNavigate();
+
     useEffect(() => {
         fetch('https://dry-headland-80440.herokuapp.com/tools', {
             method: 'GET',
-            // headers: {
-            //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            // }
         })
-            .then(res => {
-                // if (res.status === 401 || res.status === 403) {
-                //     signOut(auth);
-                //     localStorage.removeItem('accessToken');
-                //     navigate('/');
-                // }
-                return res.json();
-            })
+            .then(res => res.json())
             .then(data => setTools(data))
     }, [])
     return (

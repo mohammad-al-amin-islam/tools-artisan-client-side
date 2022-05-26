@@ -1,4 +1,4 @@
-# Welcome to Tools Artisan website code repository
+# Welcome to Tools Artisan website repository
 
 ## Live Site Link [click here](https://tools-artisan.web.app/)
 
