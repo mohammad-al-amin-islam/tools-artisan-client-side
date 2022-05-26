@@ -50,6 +50,7 @@ const MyOrders = () => {
                             <th>Tools</th>
                             <th>Payment</th>
                             <th>Delete</th>
+                            <th>Order Status</th>
                         </tr>
                     </thead>
                     <tbody>
