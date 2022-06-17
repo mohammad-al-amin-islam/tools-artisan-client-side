@@ -5,8 +5,15 @@ import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import DealsOfDay from './DealsOfDay';
 import UserReview from './UserReview';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Home = () => {
+    const [user,loading] = useAuthState(auth)
+    if(loading){
+        return <Loading></Loading>
+    }
     return (
         <div>
             <Banner></Banner>

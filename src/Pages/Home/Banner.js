@@ -3,7 +3,7 @@ import BannerImg from '../../images/banner-img.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen bg-base-100">
+        <div data-aos="zoom-in-up" className="hero min-h-screen bg-base-100">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={BannerImg} alt='Banner Images' />
                 <div>

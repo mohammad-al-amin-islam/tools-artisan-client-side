@@ -17,12 +17,16 @@ const Navbar = () => {
         {
             user && <li><Link className='mr-2 text-lg' to='/dashboard'>Dashboard</Link></li>
         }
-        <li>{user ? <div>
-            <p className='text-blue-800 font-bold'>{user.displayName}</p>
+        {
+            user && <li><p className='text-blue-800 font-bold'>{user.displayName}</p></li>
+        }
+        <li>{user ? <li>
+
             <button onClick={logout} className="btn btn-ghost text-lg font-normal normal-case">Sign Out</button>
-        </div>
+        </li>
             :
             <Link className='mr-2 text-lg' to='/login'>Login</Link>}</li>
+        
     </>
     return (
         <div className="navbar bg-base-200 py-3">
