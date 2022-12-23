@@ -26,7 +26,7 @@ const MyProfile = () => {
     const email = user?.email;
     if (email) {
       fetch(
-        `https://tools-artisan-server-side-production.up.railway.app/userprofile/${email}`,
+        `https://tools-artisan-server-side-9wl8.onrender.com/userprofile/${email}`,
         {
           method: "PUT",
           headers: {

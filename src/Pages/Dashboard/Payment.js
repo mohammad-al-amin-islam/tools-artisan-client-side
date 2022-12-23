@@ -13,15 +13,12 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
   const { data: order, isLoading } = useQuery(["orders", id], () =>
-    fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/orders/${id}`,
-      {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    ).then((res) => res.json())
+    fetch(`https://tools-artisan-server-side-9wl8.onrender.com/orders/${id}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

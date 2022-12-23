@@ -11,7 +11,7 @@ const AddTools = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://tools-artisan-server-side-production.up.railway.app/tools", {
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/tools", {
       method: "POST",
       headers: {
         "content-type": "application/json",

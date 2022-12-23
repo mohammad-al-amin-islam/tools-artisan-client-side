@@ -10,9 +10,9 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch(
-      "https://tools-artisan-server-side-production.up.railway.app/tools"
-    ).then((res) => res.json())
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/tools").then(
+      (res) => res.json()
+    )
   );
   if (isLoading) {
     return <Loading></Loading>;

@@ -7,7 +7,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     if (email) {
       fetch(
-        `https://tools-artisan-server-side-production.up.railway.app/user/${email}`,
+        `https://tools-artisan-server-side-9wl8.onrender.com/user/${email}`,
         {
           method: "PUT",
           headers: {

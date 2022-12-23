@@ -5,7 +5,7 @@ const AllTools = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("https://tools-artisan-server-side-production.up.railway.app/tools", {
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/tools", {
       method: "GET",
     })
       .then((res) => res.json())

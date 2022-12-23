@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
 
   useEffect(() => {
     fetch(
-      "https://tools-artisan-server-side-production.up.railway.app/create-payment-intent",
+      "https://tools-artisan-server-side-9wl8.onrender.com/create-payment-intent",
       {
         method: "POST",
         headers: {
@@ -72,7 +72,7 @@ const CheckoutForm = ({ order }) => {
         transaction: paymentIntent.id,
       };
       fetch(
-        `https://tools-artisan-server-side-production.up.railway.app/orders/${_id}`,
+        `https://tools-artisan-server-side-9wl8.onrender.com/orders/${_id}`,
         {
           method: "PATCH",
           headers: {

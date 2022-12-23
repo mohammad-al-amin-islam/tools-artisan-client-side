@@ -5,7 +5,7 @@ const DeleteUnpaidOrderModal = ({ unpaidItem, setUnpaidItem, refetch }) => {
   const { _id, toolsName } = unpaidItem;
   const handleDeleteBtn = (id) => {
     fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/order/unpaid/${id}`,
+      `https://tools-artisan-server-side-9wl8.onrender.com/order/unpaid/${id}`,
       {
         method: "DELETE",
         headers: {

@@ -18,7 +18,7 @@ const MyOrders = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://tools-artisan-server-side-production.up.railway.app/orders?email=${user.email}`,
+        `https://tools-artisan-server-side-9wl8.onrender.com/orders?email=${user.email}`,
         {
           method: "GET",
           headers: {

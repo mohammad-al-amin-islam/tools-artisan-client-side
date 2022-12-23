@@ -6,7 +6,7 @@ const AllOrderRow = ({ order, index, refetch, setUnpaidItem }) => {
 
   const handlePending = (id) => {
     fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/orders/shipped/${id}`,
+      `https://tools-artisan-server-side-9wl8.onrender.com/orders/shipped/${id}`,
       {
         method: "PUT",
         headers: {

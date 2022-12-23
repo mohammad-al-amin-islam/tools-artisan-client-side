@@ -4,15 +4,12 @@ import { toast } from "react-toastify";
 const DeleteOrderModal = ({ deleteItem, setDeleteItem, setReload }) => {
   const { _id, toolsName } = deleteItem;
   const handleDeleteBtn = () => {
-    fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/orders/${_id}`,
-      {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`https://tools-artisan-server-side-9wl8.onrender.com/orders/${_id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {

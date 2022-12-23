@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("https://tools-artisan-server-side-production.up.railway.app/user", {
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -20,7 +20,7 @@ const MakeAdmin = () => {
   //handle admin
   const handleAdmin = (email) => [
     fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/user/admin/${email}`,
+      `https://tools-artisan-server-side-9wl8.onrender.com/user/admin/${email}`,
       {
         method: "PUT",
         headers: {

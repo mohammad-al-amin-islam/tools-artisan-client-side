@@ -25,17 +25,14 @@ const AddReview = () => {
         description: data.description,
       };
 
-      fetch(
-        "https://tools-artisan-server-side-production.up.railway.app/ratings",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-          body: JSON.stringify(ratingsInfo),
-        }
-      )
+      fetch("https://tools-artisan-server-side-9wl8.onrender.com/ratings", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(ratingsInfo),
+      })
         .then((res) => res.json())
         .then((data) => {
           toast.success("Review updated successfully");

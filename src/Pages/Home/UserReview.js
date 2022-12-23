@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const UserReview = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://tools-artisan-server-side-production.up.railway.app/ratings")
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/ratings")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

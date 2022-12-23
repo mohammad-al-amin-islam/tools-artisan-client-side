@@ -10,15 +10,12 @@ const ManageAllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(
-      "https://tools-artisan-server-side-production.up.railway.app/allorders",
-      {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    ).then((res) => res.json())
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/allorders", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   const [unpaidItem, setUnpaidItem] = useState(null);
   if (isLoading) {

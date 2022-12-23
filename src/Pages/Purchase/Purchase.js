@@ -24,9 +24,7 @@ const Purchase = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(
-      `https://tools-artisan-server-side-production.up.railway.app/tool/${id}`
-    )
+    fetch(`https://tools-artisan-server-side-9wl8.onrender.com/tool/${id}`)
       .then((res) => res.json())
       .then((data) => setTool(data));
   }, [id]);
@@ -49,17 +47,14 @@ const Purchase = () => {
       quantity: quantity,
       price: price,
     };
-    fetch(
-      "https://tools-artisan-server-side-production.up.railway.app/orders",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify(purchaseInfo),
-      }
-    )
+    fetch("https://tools-artisan-server-side-9wl8.onrender.com/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(purchaseInfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         toast.success("Order confirmed successfully");
