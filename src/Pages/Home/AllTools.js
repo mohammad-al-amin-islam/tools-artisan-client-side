@@ -14,7 +14,7 @@ const AllTools = () => {
         setTools(data);
         setReload(!reload);
       });
-  }, [reload]);
+  }, []);
   if (reload) {
     return <Loading></Loading>;
   }
