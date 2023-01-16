@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../Shared/Loading";
 import Tools from "./Tools";
 
 const AllTools = () => {
   const [tools, setTools] = useState([]);
+  const [reload, setReload] = useState(true);
   useEffect(() => {
     fetch("https://tools-artisan-server-side-9wl8.onrender.com/tools", {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((data) => setTools(data));
-  }, []);
+      .then((data) => {
+        setTools(data);
+        setReload(!reload);
+      });
+  }, [reload]);
+  if (reload) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="bg-slate-100">
       <div className="p-10 ">
