@@ -28,12 +28,11 @@ const AddTools = () => {
   return (
     <div>
       <div>
-        <div className="pt-10 text-center">
-          <h1 className="text-4xl font-bold text-primary ">Add a Tools</h1>
-          <div className="border w-56 h-1 mt-4 bg-amber-700 mx-auto"></div>
-        </div>
         <div className="flex h-full justify-center">
           <div className="card w-96 lg:w-1/2 bg-base-100 shadow-xl ">
+            <div className="pt-10 text-center">
+              <h1 className="text-4xl font-bold text-primary ">Add a Tools</h1>
+            </div>
             <div className="card-body">
               <h2 className="card-title">Tools Information</h2>
               <form onSubmit={handleSubmit(onSubmit)}>

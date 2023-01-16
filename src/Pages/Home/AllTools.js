@@ -3,7 +3,6 @@ import Tools from "./Tools";
 
 const AllTools = () => {
   const [tools, setTools] = useState([]);
-
   useEffect(() => {
     fetch("https://tools-artisan-server-side-9wl8.onrender.com/tools", {
       method: "GET",
@@ -20,7 +19,7 @@ const AllTools = () => {
           </h1>
           <div className="border w-56 h-1 mx-auto mt-4 bg-amber-700"></div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 justify-items-center">
           {tools.map((tool) => (
             <Tools key={tool._id} tool={tool}></Tools>
           ))}

@@ -15,7 +15,7 @@ const UserReview = () => {
         </h1>
         <div className="border w-56 h-1 mx-auto mt-4 bg-amber-700"></div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 justify-items-center">
         {reviews.map((review) => (
           <div
             data-aos="flip-left"

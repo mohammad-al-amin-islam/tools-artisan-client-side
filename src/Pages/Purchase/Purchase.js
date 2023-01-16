@@ -72,16 +72,25 @@ const Purchase = () => {
       </div>
       <div className="hero min-h-screen bg-base-100">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold mr-10">{name}</h1>
-            <div className="w-96 rounded">
+          <div className=" border-2 p-4 rounded-lg">
+            <h1 className="text-2xl font-bold mr-10 text-center">{name}</h1>
+            <div className="w-72 lg:w-96 rounded ">
               <img src={image} alt={name} />
             </div>
             <div className="">
-              <p>Description: {description}</p>
-              <p>Prices: {price}</p>
-              <p>Minimum Order: {minOrder}</p>
-              <p>Available Quantity: {availableQuantity}</p>
+              <p>
+                <span className="font-bold">Description:</span> {description}
+              </p>
+              <p>
+                <span className="font-bold">Prices:</span> {price}
+              </p>
+              <p>
+                <span className="font-bold">Minimum Order:</span> {minOrder}
+              </p>
+              <p>
+                <span className="font-bold">Available Quantity:</span>{" "}
+                {availableQuantity}
+              </p>
             </div>
           </div>
           <div className="card flex w-full lg:w-96  shadow-2xl bg-base-100">

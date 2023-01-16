@@ -22,7 +22,7 @@ const ManageAllOrders = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
+    <div className="ml-2">
       <h1 className="text-2xl">Manage all order here:{orders.length}</h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
